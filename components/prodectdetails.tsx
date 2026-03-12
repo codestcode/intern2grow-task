@@ -11,7 +11,6 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
     <main className="min-h-screen bg-[#f8f5ef]">
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid items-start gap-10 lg:grid-cols-2">
-          {/* Left Side - Image */}
           <div className="rounded-[28px] bg-[#efeae2] p-6 shadow-sm">
             <div className="flex min-h-[520px] items-center justify-center overflow-hidden rounded-[24px] bg-[#e7e1d8]">
               <Image
@@ -25,16 +24,19 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
             </div>
           </div>
 
-          {/* Right Side - Details */}
           <div className="pt-2">
-            <div className="mb-6">
-              <Link
-                href="/"
-                className="text-sm text-gray-500 transition hover:text-gray-900"
-              >
-                ← Back to products
+            <nav
+              aria-label="Breadcrumb"
+              className="mb-6 flex items-center gap-2 text-sm text-gray-500"
+            >
+              <Link href="/" className="transition hover:text-gray-900 hover:underline">
+                Home
               </Link>
-            </div>
+              <span>/</span>
+              <span aria-current="page" className="truncate font-medium text-gray-800">
+                {product.title}
+              </span>
+            </nav>
 
             <p className="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">
               {product.category}
@@ -46,8 +48,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
             {product.brand && (
               <p className="mt-4 text-base text-gray-500">
-                Brand:{" "}
-                <span className="font-medium text-gray-800">{product.brand}</span>
+                Brand: <span className="font-medium text-gray-800">{product.brand}</span>
               </p>
             )}
 
@@ -77,9 +78,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
             <div className="mt-10 rounded-3xl bg-white p-6 shadow-sm">
               <p className="text-sm font-medium text-gray-500">Product ID</p>
-              <p className="mt-2 text-lg font-semibold text-[#22160f]">
-                #{product.id}
-              </p>
+              <p className="mt-2 text-lg font-semibold text-[#22160f]">#{product.id}</p>
             </div>
           </div>
         </div>
