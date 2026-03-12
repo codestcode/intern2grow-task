@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Intern2Grow Task",
-  description: "Products listing and details pages built with Next.js",
+  description: "Products fetch and details pages",
 };
 
 export default function RootLayout({
